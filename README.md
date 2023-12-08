@@ -1,24 +1,42 @@
-# MetaModule1 Solidity Contract
+# ErrorToken Smart Contract
 
-This Solidity smart contract, named `MetaModule1`, includes functions for club entry, a calculation with non-zero denominator check, and class groups limitation.
+This Solidity smart contract, named ErrorToken, provides a set of functions for managing access to a venue, performing mathematical operations, and creating groups. It is developed with the aim of showcasing basic functionalities and best practices.
 
 ## Functions
 
-### `clubEntry(uint age)`
+### 1. `enterVenue(uint userAge)`
 
-This function is used to determine if an individual is allowed to enter a club based on their age. It requires that the provided age is 18 or older.
+   - Description: Allows users to enter the venue if they meet the age requirement.
+   - Parameters:
+     - `userAge`: The age of the user.
+   - Requirements:
+     - The user must be at least 18 years old to enter the venue.
+   - Example:
+     ```solidity
+     enterVenue(21);
+     ```
 
-### `calculation(int a, int b)`
+### 2. `performDivision(int operand1, int operand2)`
 
-This function performs a calculation on two integer parameters (`a` and `b`). It uses multiplication instead of division, and it checks that the denominator (`b`) is not zero.
+   - Description: Performs a division operation on two integers.
+   - Parameters:
+     - `operand1`: Numerator.
+     - `operand2`: Denominator.
+   - Requirements:
+     - The denominator must not be zero.
+   - Example:
+     ```solidity
+     performDivision(10, 2); // Returns 5
+     ```
 
-### `classgroups(uint members)`
+### 3. `createGroups(uint groupSize)`
 
-The `classgroups` function checks if the number of members provided does not exceed 5. It utilizes an assertion for this condition.
-
-## Usage
-
-1. Deploy the contract to a Ethereum-compatible blockchain.
-2. Interact with the contract through transactions, calling the specified functions.
-
-
+   - Description: Creates groups with a specified size limit.
+   - Parameters:
+     - `groupSize`: The desired size of the group.
+   - Requirements:
+     - The group size must not exceed 5 members.
+   - Example:
+     ```solidity
+     createGroups(3);
+     ```
