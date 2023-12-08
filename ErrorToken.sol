@@ -1,21 +1,20 @@
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract MetaModule1 {
+contract NewModule {
     
-    function clubEntry(uint age) public {
-        require(age >= 18, "Minimum Age must be 18");
-        // You are only allowed to enter the club if you are an adult.
+    function enterVenue(uint userAge) public pure {
+        require(userAge >= 18, "Minimum Age must be 18");
+        // You are only allowed to enter the venue if you are an adult.
     }
 
-    function calculation(int a, int b) public pure returns (int) {
-        require(b > 0 , "B must be positive");
-        return a * b; // Using multiplication instead of division
+    function performDivision(int operand1, int operand2) public pure returns (int) {
+        require(operand2 != 0, "Denominator can't be zero");
+        return operand1 / operand2; // Using multiplication instead of division
     }
 
-    function classgroups(uint members) public {
-        assert(members <= 9);
-        // A group must not exceed 9 members.
+    function createGroups(uint groupSize) public pure {
+        assert(groupSize <= 5);
+        // A group must not exceed 5 members.
     }
 }
