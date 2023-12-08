@@ -9,7 +9,9 @@ contract NewModule {
     }
 
     function performDivision(int operand1, int operand2) public pure returns (int) {
-        require(operand2 != 0, "Denominator can't be zero");
+        if( operand2==0 ){
+            revert("Denominator can't be zero");
+        }
         return operand1 / operand2; 
     }
 
