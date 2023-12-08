@@ -10,7 +10,7 @@ contract NewModule {
 
     function performDivision(int operand1, int operand2) public pure returns (int) {
         require(operand2 != 0, "Denominator can't be zero");
-        return operand1 / operand2; // Using multiplication instead of division
+        return operand1 / operand2; 
     }
 
     function createGroups(uint groupSize) public pure {
